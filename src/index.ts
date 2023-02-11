@@ -23,7 +23,7 @@ type Tree = {
 };
 const spec: GameSpec = (() => {
   const tileSize = 32;
-  const rows = 16;
+  const rows = 10;
   const cols = 20;
   const width = tileSize * cols;
   const height = tileSize * rows;
@@ -83,7 +83,10 @@ const spec: GameSpec = (() => {
         tree.playing = false;
       }
 
-      tree.sound?.pos(tree.pos.x / 100, tree.pos.y / 100);
+      tree.sound?.pos(
+        (tree.pos.x + (tree.length * tileSize) / 2) / 100,
+        tree.pos.y / 100
+      );
       const rel_pos = tree.pos.clone().sub(cam);
       //reset
       if (rel_pos.x < -tree.length * tileSize) {
@@ -157,11 +160,18 @@ const spec: GameSpec = (() => {
       if (tree) {
         attached_tree = tree;
       } else {
-        sounds["explosion"].play();
-        game.stop();
-        Howler.stop();
-        speechHandler.speak("game over");
-        setTimeout(() => (window.location.href = window.location.href), 3000);
+        if (player.y === 0) {
+          speechHandler.speak("success ");
+          game.stop();
+          Howler.stop();
+          setTimeout(() => (window.location.href = window.location.href), 3000);
+        } else {
+          sounds["explosion"].play();
+          game.stop();
+          Howler.stop();
+          speechHandler.speak("game over");
+          setTimeout(() => (window.location.href = window.location.href), 3000);
+        }
         // todo play splash and restart
       }
     }

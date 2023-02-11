@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scape</title>
+  </head>
+  <body>
+    <main>
+      <h1>Frogger</h1>
+      <section>
+        <h2>Menu</h2>
+        <button id="test">Test</button>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="resume">Resume</button>
+        <button id="rules">Rules</button>
+        <button id="glossar">Sound glossar</button>
+      </section>
+      <section>
+        <h2>Debug game screen</h2>
+        <canvas id="test-canvas" width="500" height="500"></canvas>
+      </section>
+      <section>
+        <h2>Debug text</h2>
+        <label for="announce_debug">Announce Debug Output:</label>
+        <input type="checkbox" id="announce_debug" />
+        <br />
+        <pre>
+          <output id="test-output"></output>
+        </pre>
+      </section>
+      <script type="module" src="/index.ts"></script>
+    </main>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: black;
+        color: white;
+        height: 100vh;
+      }
+      main {
+        margin-inline: auto;
+        width: 800px;
+      }
+      canvas {
+        background: white;
+      }
+    </style>
+  </body>
+</html>

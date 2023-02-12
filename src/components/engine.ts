@@ -31,7 +31,7 @@ export function initGame(spec: GameSpec): Game {
     if (delta > interval) {
       start_timestamp = timestamp - (delta % interval);
       _v(() => _update?.());
-      _render?.();
+      _v(() => _render?.());
     }
 
     if (state.running) {

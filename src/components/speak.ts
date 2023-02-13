@@ -2,7 +2,7 @@ const synth = window.speechSynthesis;
 export function createSpeechHandler() {
   let pitch = 1;
   let rate = 1;
-  let voice = 11;
+  let voice = 0;
   let voices: SpeechSynthesisVoice[] = [];
 
   let resolver: any;

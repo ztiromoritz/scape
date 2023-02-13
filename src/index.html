@@ -5,8 +5,14 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>scape</title>
+    <script>
+      function openDevTools() {
+        //alert(process.versions["nw-flavor"]);
+        window.nw.Window.get().showDevTools();
+      }
+    </script>
   </head>
-  <body>
+  <body onload="openDevTools()">
     <main>
       <h1>Frogger</h1>
       <section>
